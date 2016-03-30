@@ -1,0 +1,152 @@
+/* ---------- RESET ---------- */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+input {
+	margin: 0;
+	padding: 0;	
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 100%;
+}
+
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+ul, ol, li {
+	list-style-type: none;
+}
+
+input, textarea {
+	outline: none;
+}
+
+strong {
+	font-weight: bold;
+}
+
+.fr { float: right; }
+.fl { float: left; }
+.cb { clear: both; }
+
+a {
+	text-decoration: none;
+}
+
+p a, span a, h5 a {
+	color: @link-color;
+	
+	&:hover {
+		color: @dark-color;
+	}
+}
+
+.fancy-hr {
+	border: none;
+	height: 1px;
+	background: lighten(@border-color, 5%);
+	.box-shadow(0px, 0px, 7px, @border-color);
+	margin: 3em 0;
+}
+
+
+
+
+
+/* ---------- PARAMETRIC MIXINS ---------- */
+.round (@radius: 5px) {
+	-webkit-border-radius: @radius;
+	border-radius: @radius;
+
+	-moz-background-clip: padding;
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box;
+}
+
+.gradient (@from, @to) {
+	background-color: @from;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(@from), to(@to));
+	background-image: -webkit-linear-gradient(top, @from, @to);
+	background-image:    -moz-linear-gradient(top, @from, @to);
+	background-image:      -o-linear-gradient(top, @from, @to);
+	background-image:         linear-gradient(to bottom, @from, @to);
+}
+
+.box-shadow (@x: 0, @y: 0, @blur: 1px, @color: #000) {
+	-webkit-box-shadow: @arguments;
+	box-shadow: @arguments;
+}
+
+.inner-shadow (inset, @x: 0, @y: 0, @blur: 1px, @color: #000) {
+	-webkit-box-shadow: @arguments;
+	box-shadow: @arguments;
+}
+
+.text-shadow (@x: 0, @y: 0, @blur: 1px, @color: #000) {
+     text-shadow: @arguments;
+}
+
+.transition (@duration: 0.2s, @ease: ease-out) {
+	-webkit-transition: all @duration @ease;
+	-moz-transition: all @duration @ease;
+	-o-transition: all @duration @ease; 
+	transition: all @duration @ease;
+}
+
+/* VARIABLES */
+@link-color: #4599C8;
+@dark-color: #2b3039;
+@border-color: #D7D7D7;
+@bevel-color: #FAFAFA;
+@light-text-color: #c9c9c9;
+@text-color: #5b5b5b;
+@heading-font: "Bree Serif", Arial, sans-serif;
+@serif-font: Georgia, serif;
+@body-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
+@gray-color: #F1F1F1;
+
